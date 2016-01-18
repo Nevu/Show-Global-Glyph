@@ -18,7 +18,7 @@ Download or clone the whole `Glyphsapp-Plugins`repo (it will contain more plugin
 
 ### ToDo
 
-- SIEHE PLUGIN
+- None so far
 
 ### Pull Requests
 

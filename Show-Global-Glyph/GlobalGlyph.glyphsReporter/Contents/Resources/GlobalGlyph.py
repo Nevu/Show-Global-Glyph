@@ -1,8 +1,3 @@
-#TODO
-#Renamings Reclassing etc
-#What is with the Preview?
-#Außnahme der Füllung für _globalGlyph schreiben ...
-
 #!/usr/bin/env python
 # encoding: utf-8
 

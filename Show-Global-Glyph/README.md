@@ -4,9 +4,14 @@
 
 This is a Plugin for the [Glyphs font editor](http://glyphsapp.com/). It displays a Glyph called *_global* in the Background of other Glyphs. This can give an alternative to Global Guidelines.
 
-### How to use
+### Install
 
 Download or clone the whole `Glyphsapp-Plugins`repo (it will contain more plugins soon) and copy the `ShowNodeCount.glyphsReporter` into your Glyphsapp Plugins folder (eg. `/Library/Application\ Support/Glyphs/Plugins`), restart Glyphs and when ever you need it, toggle Plugin from the view menu.
+
+### How to use
+
+You have do add a Glyph called *_global*. This one will show in Background of each Glyph while using this Plugin.
+Now you can draw every Form or stroke to be shown. To show strokes use an absolute setup form and use a overlayed double path (see Screenshot below).
 
 ### Examples
 
@@ -18,7 +23,7 @@ Download or clone the whole `Glyphsapp-Plugins`repo (it will contain more plugin
 
 ### ToDo
 
-- None so far
+- Set the Global-Glyph centred
 
 ### Pull Requests
 

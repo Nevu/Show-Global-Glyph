@@ -5,7 +5,7 @@
 This is a Plugin for the [Glyphs font editor](http://glyphsapp.com/).
 It displays a Glyph called *_global* in the Background of other Glyphs. This can give an alternative to Global Guidelines.
 
-##### Version 2.3
+###### For Glyphs Version 2.3
 
 ### Install
 
@@ -29,7 +29,7 @@ That gives you the opportunity to setup just lines or filled form.
 
 ### ToDo
 
-- Set the Global-Glyph centred
+- None so far
 
 ### Pull Requests
 

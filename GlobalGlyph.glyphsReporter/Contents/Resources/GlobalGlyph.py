@@ -128,7 +128,7 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 		if thisBezierPathWithComponent:
 			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.6, 0.2, 0.1 ).set()
 			thisBezierPathWithComponent.fill()
-			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.6, 0.2, 0.9 ).set()
+			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.6, 0.2, 1.0 ).set()
 			thisBezierPathWithComponent.stroke()
 
 

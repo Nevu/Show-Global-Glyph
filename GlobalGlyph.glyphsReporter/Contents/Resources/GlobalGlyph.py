@@ -112,6 +112,7 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 			for i, k in enumerate(masters):
 				if thisMaster == masters[i]:
 					activeMasterIndex = i
+
 		globalGlyph = Font.glyphForName_("_global")
 		if globalGlyph is None:
 			return
@@ -119,17 +120,15 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 
 		# draw path AND components for form and stroke:
 
-		#if Glyph.name == "_global":   #Außnahme der Füllung für _globalGlyph schreiben ...
-		
 		try:
 			thisBezierPathWithComponent = thisLayer.copyDecomposedLayer().bezierPath() # for Glyphs 2.2
 		except:
 			thisBezierPathWithComponent = thisLayer.copyDecomposedLayer().bezierPath   # for Glyphs 2.3
 		
 		if thisBezierPathWithComponent:
-			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.6, 0.2, 0.2 ).set()
+			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.6, 0.2, 0.1 ).set()
 			thisBezierPathWithComponent.fill()
-			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.6, 0.2, 1.0 ).set()
+			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.6, 0.2, 0.9 ).set()
 			thisBezierPathWithComponent.stroke()
 
 

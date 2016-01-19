@@ -2,14 +2,13 @@
 
 ## Plugin for Glyphsapp
 
-This is a Plugin for the [Glyphs font editor](http://glyphsapp.com/).
-It displays a Glyph called *_global* in the Background of other Glyphs. This can give an alternative to Global Guidelines.
+This is a Plugin for the great [Glyphs Font Editor](http://glyphsapp.com/).
 
-###### For Glyphs Version 2.3
+It displays a Glyph called *_global* in the Background of other Glyphs. 
+This can give an alternative to Global Guidelines.
 
-### Install
+###### Up till Glyphs Version 2.3
 
-Download or clone the whole `Glyphsapp-Plugins`repo (it will contain more plugins soon) and copy the `ShowNodeCount.glyphsReporter` into your Glyphsapp Plugins folder (eg. `/Library/Application\ Support/Glyphs/Plugins`), restart Glyphs and when ever you need it, toggle Plugin from the view menu.
 
 ### How to use
 
@@ -19,21 +18,31 @@ Now you can draw every Form or stroke to be shown.
 To show only strokes use an absolute setup form and use a overlayed double path (see Screenshot below).
 That gives you the opportunity to setup just lines or filled form.
 
+
 ### Examples
 
 ![Show Global Glyph](ShowGlobalGlyph.png)
+
+
+### Install
+
+Download or clone the whole `Glyphsapp-Plugins`repo (it will contain more plugins soon) and copy the `ShowNodeCount.glyphsReporter` into your Glyphsapp Plugins folder (eg. `/Library/Application\ Support/Glyphs/Plugins`), restart Glyphs and when ever you need it, toggle Plugin from the view menu.
+
 
 ### Known issues
 
 - None so far
 
+
 ### ToDo
 
 - None so far
 
+
 ### Pull Requests
 
 Feel free to comment or pull requests for any improvements.
+
 
 ### License
 

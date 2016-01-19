@@ -25,11 +25,11 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.1</string>
 	<key>UpdateFeedURL</key>
-	<string>____OnlineUrlToThisPlist____</string>
+	<string>https://raw.githubusercontent.com/Nevu/Show-Global-Glyph/master/GlobalGlyph.glyphsReporter/Contents/Info.plist</string>
 	<key>productPageURL</key>
-	<string>____ProductPageURL____</string>
+	<string>https://github.com/Nevu/Show-Global-Glyph</string>
 	<key>productReleaseNotes</key>
-	<string>For Glyphs 2.3</string>
+	<string>Up till Glyphs 2.3</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<false/>
 	<key>NSAppleScriptEnabled</key>

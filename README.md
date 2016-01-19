@@ -2,7 +2,10 @@
 
 ## Plugin for Glyphsapp
 
-This is a Plugin for the [Glyphs font editor](http://glyphsapp.com/). It displays a Glyph called *_global* in the Background of other Glyphs. This can give an alternative to Global Guidelines.
+This is a Plugin for the [Glyphs font editor](http://glyphsapp.com/).
+It displays a Glyph called *_global* in the Background of other Glyphs. This can give an alternative to Global Guidelines.
+
+##### Version 2.3
 
 ### Install
 
@@ -11,7 +14,10 @@ Download or clone the whole `Glyphsapp-Plugins`repo (it will contain more plugin
 ### How to use
 
 You have do add a Glyph called *_global*. This one will show in Background of each Glyph while using this Plugin.
-Now you can draw every Form or stroke to be shown. To show strokes use an absolute setup form and use a overlayed double path (see Screenshot below).
+Now you can draw every Form or stroke to be shown.
+
+To show only strokes use an absolute setup form and use a overlayed double path (see Screenshot below).
+That gives you the opportunity to setup just lines or filled form.
 
 ### Examples
 

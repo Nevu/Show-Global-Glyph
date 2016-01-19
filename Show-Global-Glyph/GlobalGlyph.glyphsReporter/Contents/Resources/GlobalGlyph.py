@@ -112,8 +112,10 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 			for i, k in enumerate(masters):
 				if thisMaster == masters[i]:
 					activeMasterIndex = i
-
-		thisLayer = Font.glyphForName_("_global").layers[activeMasterIndex]
+		globalGlyph = Font.glyphForName_("_global")
+		if globalGlyph is None:
+			return
+		thisLayer = globalGlyph.layers[activeMasterIndex]
 
 		# draw path AND components for form and stroke:
 

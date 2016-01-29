@@ -78,7 +78,7 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 		Font = Glyph.parent
 		thisMaster = Font.selectedFontMaster
 		masters = Font.masters
-		Scale = self.controller.graphicView().scale()
+		Scale = self.getScale()
 		try:
 			# Glyphs 2 (Python 2.7)
 			activeMasterIndex = masters.index(thisMaster)
@@ -127,8 +127,9 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 		"""
 		try:
 			self.drawGlobalGlyph( Layer )
-		except Exception as e:
-			self.logToConsole( "drawBackgroundForLayer_: %s" % str(e) )
+		except:
+			import traceback
+			print traceback.format_exc()
 
 	def drawBackgroundForInactiveLayer_( self, Layer ):
 		"""
@@ -138,7 +139,8 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 		try:
 			self.drawGlobalGlyph( Layer )
 		except Exception as e:
-			self.logToConsole( "drawBackgroundForInactiveLayer_: %s" % str(e) )
+			import traceback
+			print traceback.format_exc()
 
 
 

@@ -21,6 +21,8 @@ That gives you the opportunity to setup just lines or filled form.
 You can also use open contours to draw blue fields (see Screenshot below). Drawing strokes separately seems not to be possible ...
 
 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 ### Examples
 
 ![Show Global Glyph](ShowGlobalGlyph.png)
@@ -30,6 +32,8 @@ Some tricks on how to build those elements ...
 
 ![Show Global Glyph](BuildGlobalGlyph.gif)
 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ### Install
 

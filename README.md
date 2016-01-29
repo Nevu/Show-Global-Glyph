@@ -26,6 +26,11 @@ You can also use open contours to draw blue fields (see Screenshot below). Drawi
 ![Show Global Glyph](ShowGlobalGlyph.png)
 
 
+Some tricks on how to build those elements ...
+
+![Show Global Glyph](BuildGlobalGlyph.png)
+
+
 ### Install
 
 Download or clone the whole `Glyphsapp-Plugins`repo (it will contain more plugins soon) and copy the `NAMEOFTHEPLUGIN.glyphsReporter` into your Glyphsapp Plugins folder (eg. `/Library/Application\ Support/Glyphs/Plugins`), restart Glyphs and when ever you need it, toggle Plugin from the view menu.

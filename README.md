@@ -18,6 +18,8 @@ Now you can draw every Form or stroke to be shown.
 To show only strokes use an absolute setup form and use a overlayed double path (see Screenshot below).
 That gives you the opportunity to setup just lines or filled form.
 
+You can also use open contours to draw blue fields (see Screenshot below). Drawing strokes separately seems not to be possible ...
+
 
 ### Examples
 
@@ -26,17 +28,13 @@ That gives you the opportunity to setup just lines or filled form.
 
 ### Install
 
-Download or clone the whole `Glyphsapp-Plugins`repo (it will contain more plugins soon) and copy the `ShowNodeCount.glyphsReporter` into your Glyphsapp Plugins folder (eg. `/Library/Application\ Support/Glyphs/Plugins`), restart Glyphs and when ever you need it, toggle Plugin from the view menu.
+Download or clone the whole `Glyphsapp-Plugins`repo (it will contain more plugins soon) and copy the `NAMEOFTHEPLUGIN.glyphsReporter` into your Glyphsapp Plugins folder (eg. `/Library/Application\ Support/Glyphs/Plugins`), restart Glyphs and when ever you need it, toggle Plugin from the view menu.
 
 
-### Known issues
+### Known issues / ToDo
 
-- None so far
-
-
-### ToDo
-
-- None so far
+- Can't draw strokes on open contours
+- For now there seems to be a Bug, that Inactive Layers wouldn't be shown ... I try to fix
 
 
 ### Pull Requests

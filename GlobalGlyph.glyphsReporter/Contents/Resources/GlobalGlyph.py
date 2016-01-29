@@ -141,15 +141,6 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 		except Exception as e:
 			import traceback
 			print traceback.format_exc()
-
-
-
-
-	def needsExtraMainOutlineDrawingForInactiveLayer_( self, Layer ):
-		"""
-		Return False to disable the black outline. Otherwise remove the method.
-		"""
-		return False
 	
 	def getScale( self ):
 		"""

@@ -15,6 +15,7 @@ import GlyphsApp
 
 GlyphsReporterProtocol = objc.protocolNamed( "GlyphsReporter" )
 
+
 class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 	
 	def init( self ):
@@ -26,7 +27,7 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 			return self
 		except Exception as e:
 			self.logToConsole( "init: %s" % str(e) )
-	
+
 	def interfaceVersion( self ):
 		"""
 		Distinguishes the API version the plugin was built for. 
@@ -98,12 +99,16 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 			self.logToConsole( "drawForegroundForLayer_: %s" % str(e) )
 
 
+
+
+
 	def drawGlobalGlyph( self, Layer ):
 
 		Glyph = Layer.parent
 		Font = Glyph.parent
 		thisMaster = Font.selectedFontMaster
 		masters = Font.masters
+
 		try:
 			# Glyphs 2 (Python 2.7)
 			activeMasterIndex = masters.index(thisMaster)
@@ -112,25 +117,41 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 			for i, k in enumerate(masters):
 				if thisMaster == masters[i]:
 					activeMasterIndex = i
+
 		globalGlyph = Font.glyphForName_("_global")
 		if globalGlyph is None:
 			return
 		thisLayer = globalGlyph.layers[activeMasterIndex]
 
-		# draw path AND components for form and stroke:
 
-		#if Glyph.name == "_global":   #Außnahme der Füllung für _globalGlyph schreiben ...
-		
+		#draw path AND components for strokes and form:
+
 		try:
 			thisBezierPathWithComponent = thisLayer.copyDecomposedLayer().bezierPath() # for Glyphs 2.2
 		except:
 			thisBezierPathWithComponent = thisLayer.copyDecomposedLayer().bezierPath   # for Glyphs 2.3
-		
+
 		if thisBezierPathWithComponent:
-			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.6, 0.2, 0.2 ).set()
+			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.7, 0.2, 0.1 ).set()
 			thisBezierPathWithComponent.fill()
-			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.6, 0.2, 1.0 ).set()
+			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.7, 0.2, 1.0 ).set()
 			thisBezierPathWithComponent.stroke()
+
+
+		# draw path for open forms
+
+		try:
+			thisOpenBezierPath = thisLayer.openBezierPath() # for Glyphs 2.2
+		except:
+			thisOpenBezierPath = thisLayer.openBezierPath # for Glyphs 2.3
+
+		if thisOpenBezierPath:
+			NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.0, 0.0, 1.0, 0.1 ).set()
+			thisOpenBezierPath.fill()
+
+			# SEEMS NOT TO WORK FOR STROKES ONLY ...
+			# NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.0, 0.0, 1.0, 1.0 ).set()
+			# thisOpenBezierPath.stroke()
 
 
 	def drawBackgroundForLayer_( self, Layer ):
@@ -152,7 +173,9 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 		except Exception as e:
 			self.logToConsole( "drawBackgroundForInactiveLayer_: %s" % str(e) )
 
-	
+
+
+
 	def needsExtraMainOutlineDrawingForInactiveLayer_( self, Layer ):
 		"""
 		Return False to disable the black outline. Otherwise remove the method.

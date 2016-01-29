@@ -21,7 +21,15 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0.0.0</string>
+	<string>1.3</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.3</string>
+	<key>UpdateFeedURL</key>
+	<string>https://raw.githubusercontent.com/Nevu/Show-Global-Glyph/master/GlobalGlyph.glyphsReporter/Contents/Info.plist</string>
+	<key>productPageURL</key>
+	<string>https://github.com/Nevu/Show-Global-Glyph</string>
+	<key>productReleaseNotes</key>
+	<string>Add some new Features: Now also Draw with Open Contours</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<false/>
 	<key>NSAppleScriptEnabled</key>

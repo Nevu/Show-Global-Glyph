@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# --> let me know if you have ideas for improving
+#     Nevu @Github
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 import objc
 from Foundation import *
 from AppKit import *
@@ -15,7 +22,6 @@ import GlyphsApp
 
 GlyphsReporterProtocol = objc.protocolNamed( "GlyphsReporter" )
 
-
 class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 	
 	def init( self ):
@@ -27,7 +33,7 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 			return self
 		except Exception as e:
 			self.logToConsole( "init: %s" % str(e) )
-
+	
 	def interfaceVersion( self ):
 		"""
 		Distinguishes the API version the plugin was built for. 
@@ -37,7 +43,7 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 			return 1
 		except Exception as e:
 			self.logToConsole( "interfaceVersion: %s" % str(e) )
-	
+
 	def title( self ):
 		"""
 		This is the name as it appears in the menu in combination with 'Show'.
@@ -55,7 +61,7 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 		If you are not sure, use 'return None'. Users can set their own shortcuts in System Prefs.
 		"""
 		try:
-			return "y"
+			return None
 		except Exception as e:
 			self.logToConsole( "keyEquivalent: %s" % str(e) )
 	
@@ -72,14 +78,42 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 		except Exception as e:
 			self.logToConsole( "modifierMask: %s" % str(e) )
 	
+	def drawForegroundForLayer_( self, Layer ):
+		"""
+		Whatever you draw here will be displayed IN FRONT OF the paths.
+		Setting a color:
+			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 1.0, 1.0, 1.0 ).set() # sets RGBA values between 0.0 and 1.0
+			NSColor.redColor().set() # predefined colors: blackColor, blueColor, brownColor, clearColor, cyanColor, darkGrayColor, grayColor, greenColor, lightGrayColor, magentaColor, orangeColor, purpleColor, redColor, whiteColor, yellowColor
+		Drawing a path:
+			myPath = NSBezierPath.alloc().init()  # initialize a path object myPath
+			myPath.appendBezierPath_( subpath )   # add subpath to myPath
+			myPath.fill()   # fill myPath with the current NSColor
+			myPath.stroke() # stroke myPath with the current NSColor
+		To get an NSBezierPath from a GSPath, use the bezierPath() method:
+			myPath.bezierPath().fill()
+		You can apply that to a full layer at once:
+			if len( myLayer.paths > 0 ):
+				myLayer.bezierPath()       # all closed paths
+				myLayer.openBezierPath()   # all open paths
+		See:
+		https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSBezierPath_Class/Reference/Reference.html
+		https://developer.apple.com/library/mac/documentation/cocoa/reference/applicationkit/classes/NSColor_Class/Reference/Reference.html
+		"""
+		try:
+			pass
+		except Exception as e:
+			self.logToConsole( "drawForegroundForLayer_: %s" % str(e) )
+
+
+
+
 	def drawGlobalGlyph( self, Layer ):
 
 		Glyph = Layer.parent
 		Font = Glyph.parent
 		thisMaster = Font.selectedFontMaster
 		masters = Font.masters
-		Scale = self.getScale()
-		
+
 		try:
 			# Glyphs 2 (Python 2.7)
 			activeMasterIndex = masters.index(thisMaster)
@@ -94,7 +128,6 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 			return
 		thisLayer = globalGlyph.layers[activeMasterIndex]
 
-
 		#draw path AND components for strokes and form:
 
 		try:
@@ -106,7 +139,6 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.7, 0.2, 0.1 ).set()
 			thisBezierPathWithComponent.fill()
 			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.7, 0.2, 1.0 ).set()
-			thisBezierPathWithComponent.setLineWidth_(1 / Scale)
 			thisBezierPathWithComponent.stroke()
 
 
@@ -121,8 +153,9 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 			NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.0, 0.0, 1.0, 0.1 ).set()
 			thisOpenBezierPath.fill()
 			NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.0, 0.0, 1.0, 0.9 ).set()
-			thisOpenBezierPath.setLineWidth_(1 / Scale)
 			thisOpenBezierPath.stroke()
+
+
 
 
 
@@ -132,9 +165,8 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 		"""
 		try:
 			self.drawGlobalGlyph( Layer )
-		except:
-			import traceback
-			print traceback.format_exc()
+		except Exception as e:
+			self.logToConsole( "drawBackgroundForLayer_: %s" % str(e) )
 
 	def drawBackgroundForInactiveLayer_( self, Layer ):
 		"""
@@ -144,9 +176,56 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 		try:
 			self.drawGlobalGlyph( Layer )
 		except Exception as e:
-			import traceback
-			print traceback.format_exc()
+			self.logToConsole( "drawBackgroundForInactiveLayer_: %s" % str(e) )
+
+
+
+
+	def drawTextAtPoint( self, text, textPosition, fontSize=14.0, fontColor=NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.0, 0.2, 0.0, 0.3 ) ):
+		"""
+		Use self.drawTextAtPoint( "blabla", myNSPoint ) to display left-aligned text at myNSPoint.
+		"""
+		try:
+			glyphEditView = self.controller.graphicView()
+			currentZoom = self.getScale()
+			fontAttributes = { 
+				NSFontAttributeName: NSFont.labelFontOfSize_( fontSize/currentZoom ),
+				NSForegroundColorAttributeName: fontColor }
+			displayText = NSAttributedString.alloc().initWithString_attributes_( text, fontAttributes )
+			textAlignment = 0 # top left: 6, top center: 7, top right: 8, center left: 3, center center: 4, center right: 5, bottom left: 0, bottom center: 1, bottom right: 2
+			glyphEditView.drawText_atPoint_alignment_( displayText, textPosition, textAlignment )
+		except Exception as e:
+			self.logToConsole( "drawTextAtPoint: %s" % str(e) )
 	
+	def needsExtraMainOutlineDrawingForInactiveLayer_( self, Layer ):
+		"""
+		Whatever you draw here will be displayed in the Preview at the bottom.
+		Remove the method or return True if you want to leave the Preview untouched.
+		Return True to leave the Preview as it is and draw on top of it.
+		Return False to disable the Preview and draw your own.
+		In that case, don't forget to add Bezier methods like in drawForegroundForLayer_(),
+		otherwise users will get an empty Preview.
+		"""
+		return True
+	
+	def getHandleSize( self ):
+		"""
+		Returns the current handle size as set in user preferences.
+		Use: self.getHandleSize() / self.getScale()
+		to determine the right size for drawing on the canvas.
+		"""
+		try:
+			Selected = NSUserDefaults.standardUserDefaults().integerForKey_( "GSHandleSize" )
+			if Selected == 0:
+				return 5.0
+			elif Selected == 2:
+				return 10.0
+			else:
+				return 7.0 # Regular
+		except Exception as e:
+			self.logToConsole( "getHandleSize: HandleSize defaulting to 7.0. %s" % str(e) )
+			return 7.0
+
 	def getScale( self ):
 		"""
 		self.getScale() returns the current scale factor of the Edit View UI.

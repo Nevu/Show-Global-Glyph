@@ -42,8 +42,7 @@ Download or clone the whole `Glyphsapp-Plugins`repo (it will contain more plugin
 
 ### Known issues / ToDo
 
-- Can't draw strokes on open contours
-- For now there seems to be a Bug, that Inactive Layers wouldn't be shown ... I try to fix
+- none
 
 
 ### Pull Requests

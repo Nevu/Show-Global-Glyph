@@ -43,6 +43,29 @@
 	<key>PyMainFileNames</key>
 	<array>
 		<string>__boot__</string>
+		<key>CFBundleVersion</key>
+		<string>2.0</string>
+		<key>CFBundleShortVersionString</key>
+		<string>2.0</string>
+		<key>UpdateFeedURL</key>
+		<string>https://raw.githubusercontent.com/Nevu/Show-Global-Glyph/master/GlobalGlyph.glyphsReporter/Contents/Info.plist</string>
+		<key>productPageURL</key>
+		<string>https://github.com/Nevu/Show-Global-Glyph</string>
+		<key>productReleaseNotes</key>
+		<string>Fixed: Also draws Open Contours as Strokes, thx @georg</string>
+		<key>LSHasLocalizedDisplayName</key>
+		<false/>
+		<key>NSAppleScriptEnabled</key>
+		<false/>
+		<key>NSHumanReadableCopyright</key>
+		<string>Copyright, Nevu, 2016</string>
+		<key>NSMainNibFile</key>
+		<string>MainMenu</string>
+		<key>NSPrincipalClass</key>
+		<string>GlobalGlyph</string>
+		<key>PyMainFileNames</key>
+		<array>
+			<string>__boot__</string>
 	</array>
 	<key>PyOptions</key>
 	<dict>

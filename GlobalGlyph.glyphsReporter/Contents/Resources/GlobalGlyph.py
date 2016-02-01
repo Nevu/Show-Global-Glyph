@@ -79,6 +79,7 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 		thisMaster = Font.selectedFontMaster
 		masters = Font.masters
 		Scale = self.getScale()
+		
 		try:
 			# Glyphs 2 (Python 2.7)
 			activeMasterIndex = masters.index(thisMaster)
@@ -104,8 +105,8 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 		if thisBezierPathWithComponent:
 			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.7, 0.2, 0.1 ).set()
 			thisBezierPathWithComponent.fill()
-			thisBezierPathWithComponent.setLineWidth_(1 / Scale)
 			NSColor.colorWithCalibratedRed_green_blue_alpha_( 1.0, 0.7, 0.2, 1.0 ).set()
+			thisBezierPathWithComponent.setLineWidth_(1 / Scale)
 			thisBezierPathWithComponent.stroke()
 
 
@@ -117,9 +118,13 @@ class GlobalGlyph ( NSObject, GlyphsReporterProtocol ):
 			thisOpenBezierPath = thisLayer.openBezierPath # for Glyphs 2.3
 
 		if thisOpenBezierPath:
-			NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.0, 0.0, 1.0, 1.0 ).set()
+			NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.0, 0.0, 1.0, 0.1 ).set()
+			thisOpenBezierPath.fill()
+			NSColor.colorWithCalibratedRed_green_blue_alpha_( 0.0, 0.0, 1.0, 0.9 ).set()
 			thisOpenBezierPath.setLineWidth_(1 / Scale)
 			thisOpenBezierPath.stroke()
+
+
 
 	def drawBackgroundForLayer_( self, Layer ):
 		"""

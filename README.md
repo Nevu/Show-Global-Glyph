@@ -30,7 +30,7 @@ You can also use open contours to draw blue fields (see Screenshot below). Drawi
 
 Some tricks on how to build those elements ...
 
-![Build Global Glyph](BuildGlobalGlyph.gif)
+![Build Global Glyph](BuildGlobalGlyph.gif = 590x395)
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 

@@ -5,31 +5,29 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>GlobalGlyph</string>
+	<string>globalGlyph</string>
 	<key>CFBundleExecutable</key>
-	<string>GlobalGlyph</string>
+	<string>plugin</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Nevu.GlobalGlyph</string>
+	<string>com.Nevu.classGlobalGlyph</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>GlobalGlyph</string>
+	<string>globalGlyph</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>0.0.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.3</string>
+	<string>2.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.3</string>
+	<string>2.0</string>
 	<key>UpdateFeedURL</key>
-	<string>https://raw.githubusercontent.com/Nevu/Show-Global-Glyph/master/GlobalGlyph.glyphsReporter/Contents/Info.plist</string>
+	<string>____OnlineUrlToThisPlist____</string>
 	<key>productPageURL</key>
 	<string>https://github.com/Nevu/Show-Global-Glyph</string>
 	<key>productReleaseNotes</key>
-	<string>Add some new Features: Now also Draw with Open Contours</string>
+	<string>Update for Glyphs 2.3</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<false/>
 	<key>NSAppleScriptEnabled</key>
@@ -39,7 +37,7 @@
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
-	<string>GlobalGlyph</string>
+	<string>classGlobalGlyph</string>
 	<key>PyMainFileNames</key>
 	<array>
 		<string>__boot__</string>

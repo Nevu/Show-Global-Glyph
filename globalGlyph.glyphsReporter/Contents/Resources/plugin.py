@@ -70,20 +70,19 @@ class classGlobalGlyph(ReporterPlugin):
 			thisOpenBezierPath.stroke()
 
 
-
-	def background(self, layer):
+	def background(self, Layer):
 		try:
 			self.drawGlobalGlyph( Layer )
 		except Exception as e:
 			self.logToConsole( "drawBackgroundForLayer_: %s" % str(e) )
 
-	def inactiveLayers(self, layer):
+	def inactiveLayers(self, Layer):
 		try:
 			self.drawGlobalGlyph( Layer )
 		except Exception as e:
 			self.logToConsole( "drawBackgroundForLayer_: %s" % str(e) )
 
-	def preview(self, layer):
+	def preview(self, Layer):
 		try:
 			self.drawGlobalGlyph( Layer )
 		except Exception as e:

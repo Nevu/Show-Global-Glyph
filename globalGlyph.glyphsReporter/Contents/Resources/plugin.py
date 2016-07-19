@@ -13,6 +13,7 @@
 
 
 from GlyphsApp.plugins import *
+import traceback
 
 class classGlobalGlyph(ReporterPlugin):
 
@@ -73,20 +74,18 @@ class classGlobalGlyph(ReporterPlugin):
 	def background(self, Layer):
 		try:
 			self.drawGlobalGlyph( Layer )
-		except Exception as e:
-			self.logToConsole( "drawBackgroundForLayer_: %s" % str(e) )
+		except:
+			self.logError(traceback.format_exc())
 
 	def inactiveLayers(self, Layer):
 		try:
 			self.drawGlobalGlyph( Layer )
-		except Exception as e:
-			self.logToConsole( "drawBackgroundForLayer_: %s" % str(e) )
+		except:
+			self.logError(traceback.format_exc())
 
 	def preview(self, Layer):
 		try:
 			self.drawGlobalGlyph( Layer )
-		except Exception as e:
-			self.logToConsole( "drawBackgroundForLayer_: %s" % str(e) )
 
 
 
@@ -113,3 +112,5 @@ class classGlobalGlyph(ReporterPlugin):
 
 	def doSomethingElse(self):
 		print 'Just did something else'
+		except:
+			self.logError(traceback.format_exc())

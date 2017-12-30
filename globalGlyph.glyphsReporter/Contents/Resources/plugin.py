@@ -31,7 +31,7 @@ class classGlobalGlyph(ReporterPlugin):
 
 		#draw path AND components for strokes and form:
 		try:
-			globalBezierPath = globalLayer.drawBezierPath() # for Glyphs 2.3.1
+			globalBezierPath = globalLayer.completeBezierPath() # for Glyphs 2.3.1
 		except:
 			globalBezierPath = globalLayer.copyDecomposedLayer().bezierPath   # for Glyphs 2.3
 
@@ -44,7 +44,7 @@ class classGlobalGlyph(ReporterPlugin):
 		# draw path for open forms
 
 		try:
-			globalBezierPath = globalLayer.drawOpenBezierPath() # for Glyphs 2.3.1
+			globalBezierPath = globalLayer.completeOpenBezierPath() # for Glyphs 2.3.1
 		except:
 			globalBezierPath = globalLayer.openBezierPath # for Glyphs 2.3
 

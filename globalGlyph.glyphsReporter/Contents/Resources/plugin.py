@@ -23,11 +23,11 @@ class classGlobalGlyph(ReporterPlugin):
 	def drawGlobalGlyph(self, Layer):
 		Glyph = Layer.parent
 		Font = Glyph.parent
-		thisMaster = Font.selectedFontMaster
+		thisMasterID = Layer.associatedMasterId
 		globalGlyph = Font.glyphForName_("_global")
 		if globalGlyph is None:
 			return
-		globalLayer = globalGlyph.layers[thisMaster.id]
+		globalLayer = globalGlyph.layers[thisMasterID]
 
 		#draw path AND components for strokes and form:
 		try:

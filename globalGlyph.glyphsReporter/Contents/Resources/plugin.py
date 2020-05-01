@@ -22,7 +22,7 @@ class classGlobalGlyph(ReporterPlugin):
 	@objc.python_method
 	def settings(self):
 		self.menuName = Glyphs.localize({
-			'en': 'global glyph',
+			'en': 'Global Glyph',
 			'de': 'Globale Glyphe',
 			'es': 'glifo global',
 			'fr': 'glyphe global',

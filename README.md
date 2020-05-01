@@ -7,48 +7,30 @@ This is a Plugin for the great [Glyphs Font Editor](http://glyphsapp.com/).
 It displays a Glyph called *_global* in the Background of other Glyphs. 
 This can give an alternative to Global Guidelines.
 
-###### Up till Glyphs Version 2.3
-
-
 ### How to use
 
-You have do add a Glyph called *_global*. This one will show in Background of each Glyph while using this Plugin.
-Now you can draw every Form or stroke to be shown.
+You have do add a glyph called *_global* and it will show in the background of each glyph when *View > Show Global Glyph* is turned on.
+Now you can draw any form or stroke, and it will show behind every other glyph.
 
-To show only strokes use an absolute setup form and use a overlayed double path (see Screenshot below).
-That gives you the opportunity to setup just lines or filled form.
+To show only strokes use a overlaid double path (see screenshot below). That gives you the choice between just lines and filled form.
 
-You can also use open contours to draw blue fields (see Screenshot below). Drawing strokes separately seems not to be possible ...
-
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Use *open contours* to draw *blue* fields (see screenshot below).
 
 ### Examples
 
 ![Show Global Glyph](ShowGlobalGlyph.png)
 
-
 Some tricks on how to build those elements ...
 
 ![Build Global Glyph](BuildGlobalGlyph.gif)
 
+### Installation
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-### Install
-
-Download or clone the whole `Glyphsapp-Plugins`repo (it will contain more plugins soon) and copy the `NAMEOFTHEPLUGIN.glyphsReporter` into your Glyphsapp Plugins folder (eg. `/Library/Application\ Support/Glyphs/Plugins`), restart Glyphs and when ever you need it, toggle Plugin from the view menu.
-
-
-### Known issues / ToDo
-
-- none
-
+Go to *Window > Plugin Manager,* find *Global Glyph* there, and click on the *Install* button next to it.
 
 ### Pull Requests
 
 Feel free to comment or pull requests for any improvements.
-
 
 ### License
 

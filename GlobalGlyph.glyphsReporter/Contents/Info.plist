@@ -12,20 +12,12 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>globalGlyph</string>
-	<key>CFBundleVersion</key>
-	<string>2.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0</string>
-	<key>UpdateFeedURL</key>
-	<string>https://raw.githubusercontent.com/Nevu/Show-Global-Glyph/master/Show-Global-Glyph.glyphsReporter/Contents/Info.plist</string>
-	<key>productPageURL</key>
-	<string>https://github.com/Nevu/Show-Global-Glyph</string>
-	<key>productReleaseNotes</key>
-	<string>Update for Glyphs 3</string>
+	<string>2.1</string>
+	<key>CFBundleVersion</key>
+	<string>22</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright, Nevu, 2016</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>classGlobalGlyph</string>
 	<key>PyMainFileNames</key>

@@ -1,46 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleDisplayName</key>
-	<string>globalGlyph</string>
+	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>plugin</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Nevu.classGlobalGlyph</string>
+	<string>com.Nevu.GlobalGlyph</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>globalGlyph</string>
-	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>2.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0</string>
-	<key>UpdateFeedURL</key>
-	<string>____OnlineUrlToThisPlist____</string>
-	<key>productPageURL</key>
-	<string>https://github.com/Nevu/Show-Global-Glyph</string>
-	<key>productReleaseNotes</key>
-	<string>Update for Glyphs 2.3</string>
-	<key>LSHasLocalizedDisplayName</key>
-	<false/>
-	<key>NSAppleScriptEnabled</key>
-	<false/>
+	<string>2.1</string>
+	<key>CFBundleVersion</key>
+	<string>22</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright, Nevu, 2016</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>classGlobalGlyph</string>
 	<key>PyMainFileNames</key>
 	<array>
-		<string>__boot__</string>
+		<string>plugin.py</string>
 	</array>
 </dict>
 </plist>

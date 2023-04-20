@@ -23,15 +23,15 @@ class classGlobalGlyph(ReporterPlugin):
 	def drawGlobalGlyph(self, Layer):
 		Glyph = Layer.parent
 		Font = Glyph.parent
-		thisMaster = Font.selectedFontMaster
+		thisMasterID = Layer.associatedMasterId
 		globalGlyph = Font.glyphForName_("_global")
 		if globalGlyph is None:
 			return
-		globalLayer = globalGlyph.layers[thisMaster.id]
+		globalLayer = globalGlyph.layers[thisMasterID]
 
 		#draw path AND components for strokes and form:
 		try:
-			globalBezierPath = globalLayer.drawBezierPath() # for Glyphs 2.3.1
+			globalBezierPath = globalLayer.completeBezierPath() # for Glyphs 2.3.1
 		except:
 			globalBezierPath = globalLayer.copyDecomposedLayer().bezierPath   # for Glyphs 2.3
 
@@ -44,7 +44,7 @@ class classGlobalGlyph(ReporterPlugin):
 		# draw path for open forms
 
 		try:
-			globalBezierPath = globalLayer.drawOpenBezierPath() # for Glyphs 2.3.1
+			globalBezierPath = globalLayer.completeOpenBezierPath() # for Glyphs 2.3.1
 		except:
 			globalBezierPath = globalLayer.openBezierPath # for Glyphs 2.3
 
